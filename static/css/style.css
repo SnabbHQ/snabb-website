@@ -55,7 +55,7 @@
 @media (max-width: 767px) {
   .content-9 {
     padding-top: 105px;
-    padding-bottom: 0;
+    padding-bottom: 105px;
   }
   .content-9 .hidden-phone {
     margin-top: 40px;
