@@ -1,10 +1,13 @@
-let requestLanguage = require('express-request-language');
+let compression = require('compression');
 let cookieParser = require('cookie-parser');
 let express = require('express');
 let path = require('path');
+let requestLanguage = require('express-request-language');
+let serverPort = process.env.PORT || 4000;
 
 let app = express();
 
+app.use(compression());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(requestLanguage({
@@ -37,6 +40,6 @@ function renderPage(res, lang) {
   res.sendFile(path.join(__dirname+ '/public/pages/index' + lang + '.html'));
 }
 
-app.listen(4000, function () {
+app.listen(serverPort, function () {
   console.log('Example app listening on port 4000!')
 });
