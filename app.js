@@ -19,11 +19,23 @@ app.use(requestLanguage({
 app.get('/', function(req, res) {
   console.log(req.language);
   if (req.language.indexOf('es') > -1) {
-    res.sendFile(path.join(__dirname+ '/public/pages/indexES.html'));
+    res.redirect('/es/')
   } else {
-    res.sendFile(path.join(__dirname+ '/public/pages/indexEN.html'));
+    renderPage(res, 'EN')
   }
 });
+
+app.get('/en/', function (req, res) {
+  renderPage(res, 'EN')
+});
+
+app.get('/es/', function (req, res) {
+  renderPage(res, 'ES')
+});
+
+function renderPage(res, lang) {
+  res.sendFile(path.join(__dirname+ '/public/pages/index' + lang + '.html'));
+}
 
 app.listen(4000, function () {
   console.log('Example app listening on port 4000!')
