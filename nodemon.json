@@ -1,0 +1,6 @@
+{
+  "restartable": "rs",
+  "verbose": true,
+  "ignore": ["swagger.yaml"],
+  "ext": "js yaml"
+}
