@@ -13,6 +13,7 @@
     "node": ">=6"
   },
   "dependencies": {
+    "compression": "^1.6.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
     "express-request-language": "^1.1.9",
