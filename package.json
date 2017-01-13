@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
+    "serve": "node_modules/.bin/nodemon --config nodemon.json",
+    "debug": "node_modules/.bin/nodemon debug --config nodemon.json",
     "test": "eslint src"
   },
   "main": "app.js",
