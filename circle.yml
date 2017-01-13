@@ -1,0 +1,11 @@
+test:
+  override:
+    - echo "Tests disabled"
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: snabb-website
+
+
+
