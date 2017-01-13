@@ -1,5 +1,15 @@
+<?php
+ $languages = array('en', 'es');
+ $header = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
+ foreach($header as $lang) {
+    if(in_array($lang, $languages)) {
+    header("Location: $lang.php"); // i.e. en.php or es.php
+        break;
+    }
+ }
+?>
 <!--DOCTYPE html -->
-<html lang="es">
+<html>
 <head>
     <meta charset="utf-8">
     <meta name="apple-mobile-web-app-capable" content="yes"/>
@@ -49,7 +59,7 @@
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2">
                     <div class="hero-unit">
-                        <h1>Deslumbra a tus clientes con envíos On-Demand para tu negocio</h1>
+                        <h1>Deslumbra a tus clientes con envíos On-Demand para tu negocio.</h1>
                     </div>
                 </div>
             </div>
