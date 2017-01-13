@@ -1,0 +1,23 @@
+{
+  "name": "snabb-website",
+  "description": "Snabb's main website",
+  "private": true,
+  "scripts": {
+    "start": "node app.js",
+    "test": "eslint src"
+  },
+  "main": "app.js",
+  "engines": {
+    "node": ">=6"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "express-request-language": "^1.1.9",
+    "html": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.1.1",
+    "nodemon": "^1.11.0"
+  }
+}
