@@ -11,25 +11,18 @@ app.use(requestLanguage({
   languages: ['en', 'es'],
   cookie: {
     name: 'language',
-    queryName: 'locale',
     options: { maxAge: 24*3600*1000 },
     url: '/languages/{language}'
   }
 }));
 
 app.get('/', function(req, res) {
-  console.log(req.language); // 'en'
-  if (req.language.indexOf('es')) {
-    res.sendFile(path.join(__dirname+ '/public/pages/indexEN.html'));
-  } else {
+  console.log(req.language);
+  if (req.language.indexOf('es') > -1) {
     res.sendFile(path.join(__dirname+ '/public/pages/indexES.html'));
+  } else {
+    res.sendFile(path.join(__dirname+ '/public/pages/indexEN.html'));
   }
-});
-
-// set a cookie to request locale
-app.get('setlocale/:locale', function (req, res) {
-  res.cookie('language', req.params.locale);
-  res.redirect('back');
 });
 
 app.listen(4000, function () {
